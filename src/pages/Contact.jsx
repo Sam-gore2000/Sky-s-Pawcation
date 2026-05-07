@@ -26,7 +26,7 @@ export default function Contact() {
             <ScrollReveal direction="right">
               <div className="rounded-3xl overflow-hidden shadow-xl h-72 sm:h-96">
                 <iframe title="Sky's Pawcation Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15079.998890977693!2d72.81717065!3d19.1334056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9b888ae67fd%3A0xb924928275bfe252!2sAndheri%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1695000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.5348907861194!2d73.89491827494342!3d18.549908768278005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c18d064a5357%3A0x6cd7535073b5f472!2sSolitaire%20Business%20Hub%20Kalyani%20Nagar!5e0!3m2!1sen!2sin!4v1778059418474!5m2!1sen!2sin"
                   width="100%" height="100%" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
               </div>
             </ScrollReveal>
