@@ -32,13 +32,13 @@ function ThemeToggle({ isDark, setIsDark, size = 'md' }) {
       className={`relative flex items-center rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-orange/40 ${
         isDark
           ? 'bg-slate-800 border-slate-600 hover:border-brand-orange'
-          : 'bg-amber-50 border-amber-200 hover:border-brand-orange'
+          : 'bg-cyan-50 border-cyan-200 hover:border-brand-orange'
       } ${isSmall ? 'w-14 h-7 px-1' : 'w-16 h-8 px-1'}`}
       whileTap={{ scale: 0.95 }}
     >
       {/* Track icons */}
       <span className={`absolute left-1.5 transition-opacity duration-300 ${isDark ? 'opacity-30' : 'opacity-100'}`}>
-        <SunIcon className={`text-amber-400 ${isSmall ? 'w-3.5 h-3.5' : 'w-4 h-4'}`} />
+        <SunIcon className={`text-brand-orange ${isSmall ? 'w-3.5 h-3.5' : 'w-4 h-4'}`} />
       </span>
       <span className={`absolute right-1.5 transition-opacity duration-300 ${isDark ? 'opacity-100' : 'opacity-30'}`}>
         <MoonIcon className={`text-brand-sky ${isSmall ? 'w-3.5 h-3.5' : 'w-4 h-4'}`} />
@@ -67,7 +67,7 @@ function ThemeToggle({ isDark, setIsDark, size = 'md' }) {
               animate={{ opacity: 1, rotate: 0, scale: 1 }}
               exit={{ opacity: 0, rotate: -30, scale: 0.5 }}
               transition={{ duration: 0.2 }}>
-              <SunIcon className={`text-amber-400 ${isSmall ? 'w-3 h-3' : 'w-3.5 h-3.5'}`} />
+              <SunIcon className={`text-brand-orange ${isSmall ? 'w-3 h-3' : 'w-3.5 h-3.5'}`} />
             </motion.span>
           )}
         </AnimatePresence>

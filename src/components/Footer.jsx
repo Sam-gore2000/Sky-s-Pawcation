@@ -16,8 +16,8 @@ export default function Footer() {
               </div>
             </Link>
             <address className="not-italic text-sm space-y-1.5 text-slate-400">
-              <p className="flex gap-2"><span className="text-brand-orange">📍</span> 14, Sunshine Complex, Kalayni Nagar, Pune – 411014</p>
-              <p className="flex gap-2"><span className="text-brand-orange">📞</span> <a href="tel:+919373222026" className="hover:text-brand-orange">+91 9373222026</a></p>
+              <p className="flex gap-2"><span className="text-brand-orange">📍</span> PO BOX Collins Street West</p>
+              <p className="flex gap-2"><span className="text-brand-orange">📞</span> <a href="tel:+919876543210" className="hover:text-brand-orange">+91 98765 43210</a></p>
               <p className="flex gap-2"><span className="text-brand-orange">🕐</span> Mon–Sun: 8AM – 8PM</p>
             </address>
             <div className="flex gap-2 mt-5">

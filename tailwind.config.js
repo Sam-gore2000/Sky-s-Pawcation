@@ -6,16 +6,16 @@ export default {
     extend: {
       colors: {
         brand: {
-          orange: '#FF6B35',
-          orangeLight: '#FF8C5A',
-          orangePale: '#FFF0EB',
-          green: '#4CAF50',
+          orange: '#33d7fc',
+          orangeLight: '#52D8F7',
+          orangePale: '#E8FAFD',
+          green: '#2de2e2',
           greenLight: '#81C784',
           greenPale: '#F0F9F0',
-          yellow: '#FFD600',
+          yellow: '#28d7ee',
           yellowPale: '#FFFDE7',
-          sky: '#29B6F6',
-          skyPale: '#E1F5FE',
+          sky: '#25CDF4',
+          skyPale: '#E8FAFD',
         },
         dark: {
           bg: '#0D1117',

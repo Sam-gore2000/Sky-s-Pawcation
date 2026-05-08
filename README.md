@@ -24,11 +24,79 @@ A premium dog daycare website with vibrant orange/green palette, organic blob sh
 - **Framer Motion 11** (scroll animations, page transitions, lightbox)
 - **Google Fonts**: Fredoka One (display) + Nunito (body)
 
+---
 
+## Local Setup — Step by Step
 
+### Step 1: Install Node.js
+Download from https://nodejs.org (version 18 or higher)
 
+Verify: `node --version`  (should show v18+)
 
+### Step 2: Extract the ZIP
+Extract `skys-pawcation.zip` anywhere on your computer.
 
+### Step 3: Open terminal in project folder
+```
+cd skys-pawcation
+```
+
+### Step 4: Install packages
+```
+npm install
+```
+This downloads all dependencies (~100MB). Wait until it finishes.
+
+### Step 5: Start the dev server
+```
+npm run dev
+```
+
+### Step 6: Open in browser
+Go to: **http://localhost:5173**
+
+---
+
+## Build for Production
+
+```bash
+npm run build
+```
+Creates `/dist` folder with optimised static files (HTML + CSS + JS).
+
+---
+
+## Deploy Options
+
+### Netlify (Free — Recommended)
+1. Create account at netlify.com
+2. Click "Add new site" → "Deploy manually"
+3. Drag & drop the `/dist` folder
+4. Your site is live in 30 seconds!
+
+Or via CLI:
+```bash
+npm install -g netlify-cli
+netlify deploy --dir=dist --prod
+```
+
+### Vercel (Free)
+```bash
+npm install -g vercel
+vercel --prod
+```
+
+### GitHub Pages
+1. Push to GitHub
+2. Settings → Pages → GitHub Actions
+3. Add workflow: build then deploy `/dist`
+
+### Traditional Hosting (cPanel)
+1. Run `npm run build`
+2. Upload ALL contents of `/dist` to `public_html/`
+3. No server required — it's all static files
+
+---
 
 ## Customise Content
 

@@ -54,7 +54,7 @@
 /* Scrollbar */
 ::-webkit-scrollbar { width: 7px; }
 ::-webkit-scrollbar-track { background: #f8fafc; }
-::-webkit-scrollbar-thumb { background: #FF6B35; border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: #25CDF4; border-radius: 99px; }
 .dark ::-webkit-scrollbar-track { background: #0D1117; }
 
 /* Service icon circle */
@@ -63,4 +63,4 @@
 }
 
 /* Paw print SVG path for logo */
-.paw-logo { filter: drop-shadow(0 2px 6px rgba(255,107,53,0.35)); }
+.paw-logo { filter: drop-shadow(0 2px 6px rgba(37,205,244,0.45)); }
