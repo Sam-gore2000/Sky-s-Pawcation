@@ -52,9 +52,9 @@ export const pricing = [
 ]
 
 export const teamMembers = [
-  { id:1, name:'Skylar Dsouza', role:'Founder & Head of Care', bio:'10+ years in animal welfare. Founded Sky\'s Pawcation to give Mumbai dogs the love they deserve.',   img:'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80' },
-  { id:2, name:'Arjun Nair',    role:'Senior Dog Trainer',     bio:'Certified in positive reinforcement. Arjun has trained 500+ dogs with patience and consistency.',      img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80' },
-  { id:3, name:'Meera Pillai',  role:'Grooming Specialist',    bio:'7 years of grooming expertise. Meera\'s gentle touch keeps even anxious dogs perfectly calm.',          img:'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
+  { id:1, name:'Priya Mendonsa', role:'Founder & Head of Care', bio:'10+ years in animal welfare. Founded Sky\'s Pawcation to give Mumbai dogs the love they deserve.',   img:'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80' },
+  { id:2, name:'Jackson M',    role:'Senior Dog Trainer',     bio:'Certified in positive reinforcement. Arjun has trained 500+ dogs with patience and consistency.',      img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80' },
+  { id:3, name:'Siona Y',  role:'Grooming Specialist',    bio:'7 years of grooming expertise. Meera\'s gentle touch keeps even anxious dogs perfectly calm.',          img:'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
 ]
 
 export const facilityFeatures = [

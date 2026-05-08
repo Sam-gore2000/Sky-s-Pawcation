@@ -189,7 +189,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80" alt="Jane" className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-orange" />
               <div>
-                <div className="font-heading font-800 text-slate-800 dark:text-dark-text">Jane Cola</div>
+                <div className="font-heading font-800 text-slate-800 dark:text-dark-text">Sam Gore</div>
                 <div className="text-xs text-slate-500 dark:text-dark-muted">Owner, Labrador</div>
               </div>
             </div>
