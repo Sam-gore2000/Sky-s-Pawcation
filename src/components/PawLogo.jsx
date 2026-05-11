@@ -9,7 +9,7 @@ export default function PawLogo({ size = 40, className = '' }) {
       className={className}
     >
       {/* Background circle */}
-      <circle cx="50" cy="50" r="48" fill="#25CDF4" />
+      <circle cx="50" cy="50" r="48" fill="#33d7fc" />
       {/* Paw pad - main */}
       <ellipse cx="50" cy="60" rx="18" ry="15" fill="white" />
       {/* Toe pads */}

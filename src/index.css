@@ -10,57 +10,190 @@
 
 @layer components {
   .btn-orange {
-    @apply bg-brand-orange text-white font-heading font-bold px-7 py-3 rounded-full hover:bg-brand-orangeLight transition-all duration-300 hover:shadow-lg hover:shadow-brand-orange/30 hover:-translate-y-0.5 active:scale-95 inline-flex items-center gap-2;
+    @apply bg-brand-orange text-slate-900 font-heading font-bold px-7 py-3 rounded-full
+           hover:bg-brand-orangeLight transition-all duration-300
+           hover:shadow-lg hover:shadow-brand-orange/40
+           hover:-translate-y-0.5 active:scale-95
+           inline-flex items-center gap-2 dark:text-slate-900;
   }
   .btn-outline-orange {
-    @apply border-2 border-brand-orange text-brand-orange font-heading font-bold px-7 py-3 rounded-full hover:bg-brand-orange hover:text-white transition-all duration-300 hover:-translate-y-0.5 active:scale-95 inline-flex items-center gap-2;
+    @apply border-2 border-brand-orange text-brand-orange font-heading font-bold px-7 py-3 rounded-full
+           hover:bg-brand-orange hover:text-slate-900 transition-all duration-300
+           hover:-translate-y-0.5 active:scale-95 inline-flex items-center gap-2
+           dark:border-brand-orange dark:text-brand-orange dark:hover:text-slate-900;
+  }
+  .btn-white-outline {
+    @apply border-2 border-white/80 text-white font-heading font-bold px-7 py-3 rounded-full
+           hover:bg-white hover:text-sky-600 transition-all duration-300
+           hover:-translate-y-0.5 active:scale-95 inline-flex items-center gap-2;
   }
   .btn-green {
-    @apply bg-brand-green text-white font-heading font-bold px-7 py-3 rounded-full hover:bg-brand-greenLight transition-all duration-300 hover:shadow-lg hover:shadow-brand-green/30 hover:-translate-y-0.5 active:scale-95 inline-flex items-center gap-2;
+    @apply bg-brand-green text-white font-heading font-bold px-7 py-3 rounded-full
+           hover:bg-brand-greenLight transition-all duration-300
+           hover:shadow-lg hover:shadow-brand-green/30
+           hover:-translate-y-0.5 active:scale-95 inline-flex items-center gap-2;
   }
   .section-label {
     @apply text-brand-orange font-heading font-bold text-sm uppercase tracking-widest;
   }
   .card-white {
-    @apply bg-white dark:bg-dark-card rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-dark-border;
+    @apply bg-white dark:bg-dark-card rounded-3xl shadow-md hover:shadow-xl
+           transition-all duration-300 border border-slate-100 dark:border-dark-border;
   }
 }
 
-/* Blob shapes */
+/* ── Blob shapes ── */
 .blob-orange { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
 .blob-green  { border-radius: 40% 60% 30% 70% / 60% 40% 70% 30%; }
 .blob-yellow { border-radius: 70% 30% 50% 50% / 30% 70% 60% 40%; }
 .blob-sky    { border-radius: 50% 50% 40% 60% / 60% 30% 70% 40%; }
 
-/* Organic section divider */
+/* ── Floating paw animations ── */
+@keyframes pawFloat1 {
+  0%,100% { transform: translateY(0px) translateX(0px) rotate(-8deg) scale(1); opacity: 0.18; }
+  33%     { transform: translateY(-28px) translateX(10px) rotate(4deg) scale(1.06); opacity: 0.28; }
+  66%     { transform: translateY(-12px) translateX(-8px) rotate(-4deg) scale(0.97); opacity: 0.22; }
+}
+@keyframes pawFloat2 {
+  0%,100% { transform: translateY(0px) translateX(0px) rotate(12deg) scale(1); opacity: 0.15; }
+  40%     { transform: translateY(-22px) translateX(-12px) rotate(-6deg) scale(1.08); opacity: 0.25; }
+  70%     { transform: translateY(-8px) translateX(6px) rotate(8deg) scale(0.95); opacity: 0.18; }
+}
+@keyframes pawFloat3 {
+  0%,100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.12; }
+  50%     { transform: translateY(-35px) rotate(15deg) scale(1.1); opacity: 0.22; }
+}
+@keyframes pawDrift {
+  0%   { transform: translateX(0) translateY(0) rotate(-5deg); opacity: 0; }
+  10%  { opacity: 0.2; }
+  90%  { opacity: 0.15; }
+  100% { transform: translateX(120px) translateY(-80px) rotate(20deg); opacity: 0; }
+}
+@keyframes pawRise {
+  0%   { transform: translateY(60px) scale(0.7) rotate(-10deg); opacity: 0; }
+  20%  { opacity: 0.25; }
+  80%  { opacity: 0.18; }
+  100% { transform: translateY(-120px) scale(1.1) rotate(8deg); opacity: 0; }
+}
+@keyframes cloudPulse {
+  0%,100% { transform: scale(1) translateY(0); }
+  50%     { transform: scale(1.03) translateY(-6px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes skyGradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes starTwinkle {
+  0%,100% { opacity: 0.6; transform: scale(1); }
+  50%     { opacity: 1; transform: scale(1.4); }
+}
+
+/* ── Hero sky background ── */
+.hero-sky {
+  background: linear-gradient(135deg,
+    #0ea5e9 0%,
+    #38bdf8 20%,
+    #7dd3fc 40%,
+    #33d7fc 60%,
+    #0284c7 80%,
+    #0369a1 100%
+  );
+  background-size: 300% 300%;
+  animation: skyGradientShift 12s ease infinite;
+}
+.dark .hero-sky {
+  background: linear-gradient(135deg,
+    #0c1a2e 0%,
+    #0f2744 25%,
+    #0c3460 50%,
+    #1a4a7a 75%,
+    #0d2137 100%
+  );
+  background-size: 300% 300%;
+  animation: skyGradientShift 12s ease infinite;
+}
+
+/* ── Floating paw classes ── */
+.paw-float-1  { animation: pawFloat1 6s ease-in-out infinite; }
+.paw-float-2  { animation: pawFloat2 8s ease-in-out infinite 1s; }
+.paw-float-3  { animation: pawFloat3 10s ease-in-out infinite 2s; }
+.paw-float-4  { animation: pawFloat1 7s ease-in-out infinite 3s; }
+.paw-float-5  { animation: pawFloat2 9s ease-in-out infinite 0.5s; }
+.paw-float-6  { animation: pawFloat3 11s ease-in-out infinite 4s; }
+.paw-float-7  { animation: pawFloat1 8s ease-in-out infinite 1.5s; }
+.paw-float-8  { animation: pawRise 14s ease-in-out infinite 2s; }
+.paw-float-9  { animation: pawDrift 18s ease-in-out infinite 5s; }
+.paw-float-10 { animation: pawRise 16s ease-in-out infinite 7s; }
+
+/* ── Cloud puff ── */
+.cloud-puff { animation: cloudPulse 7s ease-in-out infinite; }
+.cloud-puff-2 { animation: cloudPulse 9s ease-in-out infinite 2s; }
+.cloud-puff-3 { animation: cloudPulse 11s ease-in-out infinite 4s; }
+
+/* ── Shimmer text ── */
+.text-shimmer {
+  background: linear-gradient(90deg, #ffffff 0%, #33d7fc 40%, #ffffff 60%, #7dd3fc 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Star sparkles ── */
+.star { animation: starTwinkle 2s ease-in-out infinite; }
+
+/* ── Wave divider ── */
 .wave-divider { position: relative; }
 .wave-divider::after {
-  content:'';
-  position:absolute;
-  bottom:-1px;
-  left:0;
-  right:0;
-  height:60px;
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 60px;
   background: white;
   clip-path: ellipse(55% 100% at 50% 100%);
 }
 .dark .wave-divider::after { background: #0D1117; }
 
-/* Image zoom on hover */
+/* ── Image zoom ── */
 .zoom-img { overflow: hidden; }
 .zoom-img img { transition: transform 0.5s ease; }
 .zoom-img:hover img { transform: scale(1.07); }
 
-/* Scrollbar */
+/* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 7px; }
 ::-webkit-scrollbar-track { background: #f8fafc; }
-::-webkit-scrollbar-thumb { background: #25CDF4; border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: #33d7fc; border-radius: 99px; }
 .dark ::-webkit-scrollbar-track { background: #0D1117; }
 
-/* Service icon circle */
+/* ── Service icon circle ── */
 .service-circle {
-  @apply w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-3 text-3xl transition-all duration-300 hover:scale-110 cursor-default;
+  @apply w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-3
+         text-3xl transition-all duration-300 hover:scale-110 cursor-default;
 }
 
-/* Paw print SVG path for logo */
-.paw-logo { filter: drop-shadow(0 2px 6px rgba(37,205,244,0.45)); }
+/* ── Paw logo glow ── */
+.paw-logo { filter: drop-shadow(0 2px 8px rgba(51,215,252,0.5)); }
+
+/* ── Glass card ── */
+.glass-card {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 20px;
+}
+
+/* ── Stat card glow ── */
+.stat-glow {
+  box-shadow: 0 0 20px rgba(51,215,252,0.3), 0 4px 15px rgba(0,0,0,0.1);
+}

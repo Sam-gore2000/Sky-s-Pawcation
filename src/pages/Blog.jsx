@@ -66,8 +66,8 @@ export default function Blog() {
               <button key={cat} onClick={() => setActive(cat)}
                 className={`px-4 py-1.5 rounded-full text-sm font-heading font-700 whitespace-nowrap transition-all duration-200 ${
                   active === cat
-                    ? 'bg-brand-orange text-white shadow-md shadow-brand-orange/30 scale-105'
-                    : 'bg-brand-orangePale text-brand-orange hover:bg-brand-orange hover:text-white'
+                    ? 'bg-brand-orange text-slate-900 shadow-md shadow-brand-orange/30 scale-105'
+                    : 'bg-brand-orangePale text-brand-orange hover:bg-brand-orange hover:text-slate-900'
                 }`}>
                 {cat}
               </button>
@@ -87,7 +87,7 @@ export default function Blog() {
                   <div className="zoom-img h-48 overflow-hidden relative">
                     <img src={post.img} alt={post.title} className="w-full h-full object-cover" loading="lazy" />
                     <div className="absolute top-3 left-3">
-                      <span className="bg-brand-orange text-white text-xs font-heading font-700 px-3 py-1 rounded-full">{post.category}</span>
+                      <span className="bg-brand-orange text-slate-900 text-xs font-heading font-700 px-3 py-1 rounded-full">{post.category}</span>
                     </div>
                   </div>
                   <div className="p-5">
@@ -131,7 +131,7 @@ export default function Blog() {
             <p className="font-heading text-white/80 mb-6 text-sm">Dog care tips, seasonal guides and special offers — delivered to your inbox.</p>
             <div className="flex gap-3 max-w-md mx-auto">
               <input type="email" placeholder="Enter your email" className="flex-1 px-4 py-3 rounded-full text-sm outline-none text-slate-700 font-heading" />
-              <button className="bg-white text-brand-orange font-heading font-bold px-6 py-3 rounded-full hover:bg-orange-50 transition-colors whitespace-nowrap">Subscribe</button>
+              <button className="bg-slate-900 text-white font-heading font-bold px-6 py-3 rounded-full hover:bg-slate-800 transition-colors whitespace-nowrap">Subscribe</button>
             </div>
           </ScrollReveal>
         </div>

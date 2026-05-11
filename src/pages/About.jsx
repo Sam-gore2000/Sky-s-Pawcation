@@ -143,7 +143,7 @@ export default function About() {
             {facilityFeatures.map((f, i) => (
               <ScrollReveal key={f.title} delay={i*0.1} direction="scale">
                 <div className="text-center group">
-                  <div className="service-circle bg-brand-orangePale group-hover:bg-brand-orange group-hover:text-white transition-all duration-300">
+                  <div className="service-circle bg-brand-orangePale group-hover:bg-brand-orange group-hover:text-slate-900 transition-all duration-300">
                     <span className="text-3xl">{f.icon}</span>
                   </div>
                   <h4 className="font-heading font-800 text-slate-700 dark:text-dark-text text-sm mb-2 uppercase tracking-wide">{f.title}</h4>

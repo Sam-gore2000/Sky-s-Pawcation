@@ -58,8 +58,8 @@ export default function Gallery() {
               <button key={tag} onClick={() => setActive(tag)}
                 className={`px-4 py-1.5 rounded-full text-sm font-heading font-700 whitespace-nowrap transition-all duration-200 ${
                   active === tag
-                    ? 'bg-brand-orange text-white shadow-md shadow-brand-orange/30 scale-105'
-                    : 'bg-brand-orangePale text-brand-orange hover:bg-brand-orange hover:text-white'
+                    ? 'bg-brand-orange text-slate-900 shadow-md shadow-brand-orange/30 scale-105'
+                    : 'bg-brand-orangePale text-brand-orange hover:bg-brand-orange hover:text-slate-900'
                 }`}>
                 {tag}
               </button>
@@ -84,7 +84,7 @@ export default function Gallery() {
                   <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-brand-orange/0 group-hover:bg-brand-orange/20 transition-all duration-300" />
                   <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="bg-brand-orange text-white text-xs font-heading font-700 px-2.5 py-1 rounded-full">{img.tag}</span>
+                    <span className="bg-brand-orange text-slate-900 text-xs font-heading font-700 px-2.5 py-1 rounded-full">{img.tag}</span>
                   </div>
                 </motion.div>
               ))}
@@ -110,9 +110,9 @@ export default function Gallery() {
               initial={{scale:0.8,opacity:0}} animate={{scale:1,opacity:1}} exit={{scale:0.8,opacity:0}}
               onClick={e => e.stopPropagation()}>
               <img src={selected.src} alt={selected.alt} className="w-full rounded-3xl shadow-2xl object-cover max-h-[80vh]" />
-              <div className="absolute top-3 left-3 bg-brand-orange text-white text-xs font-heading font-700 px-3 py-1 rounded-full">{selected.tag}</div>
+              <div className="absolute top-3 left-3 bg-brand-orange text-slate-900 text-xs font-heading font-700 px-3 py-1 rounded-full">{selected.tag}</div>
               <button onClick={() => setSelected(null)}
-                className="absolute top-3 right-3 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-brand-orange transition-colors text-xl font-bold">
+                className="absolute top-3 right-3 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-brand-orange hover:text-slate-900 transition-colors text-xl font-bold">
                 ×
               </button>
               <p className="text-white/70 text-sm font-heading text-center mt-3">{selected.alt}</p>

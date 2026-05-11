@@ -72,7 +72,7 @@ export default function Process() {
             ].map(({ icon, title, desc }, i) => (
               <ScrollReveal key={title} delay={i*0.08}>
                 <div className="card-white p-6 group hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-orangePale flex items-center justify-center text-xl mb-4 group-hover:bg-brand-orange group-hover:scale-110 transition-all duration-300">{icon}</div>
+                  <div className="w-12 h-12 rounded-2xl bg-brand-orangePale flex items-center justify-center text-xl mb-4 group-hover:bg-brand-orange group-hover:text-slate-900 group-hover:scale-110 transition-all duration-300">{icon}</div>
                   <h3 className="font-heading font-800 text-slate-800 dark:text-dark-text mb-2">{title}</h3>
                   <p className="font-heading text-slate-500 dark:text-dark-muted text-sm leading-relaxed">{desc}</p>
                 </div>
@@ -120,8 +120,8 @@ export default function Process() {
             <h2 className="font-display text-5xl text-white mb-4">Ready to Get Started?</h2>
             <p className="font-heading text-white/80 mb-8">Book your free meet and greet today — no commitment required.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="bg-white text-brand-orange font-heading font-bold px-8 py-3.5 rounded-full hover:bg-orange-50 hover:scale-105 transition-all">Book Free Visit</Link>
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-heading font-bold px-8 py-3.5 rounded-full hover:bg-white hover:text-brand-orange hover:scale-105 transition-all">WhatsApp Us</a>
+              <Link to="/contact" className="bg-slate-900 text-white font-heading font-bold px-8 py-3.5 rounded-full hover:bg-slate-800 hover:scale-105 transition-all">Book Free Visit</Link>
+              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="border-2 border-slate-900 text-slate-900 font-heading font-bold px-8 py-3.5 rounded-full hover:bg-slate-900 hover:text-white hover:scale-105 transition-all">WhatsApp Us</a>
             </div>
           </ScrollReveal>
         </div>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ScrollReveal'
+import FloatingPaws from '../components/FloatingPaws'
 import { services, testimonials, pricing } from '../data'
 
 const ServiceCircle = ({ s, delay }) => (
@@ -14,70 +15,228 @@ const ServiceCircle = ({ s, delay }) => (
   </ScrollReveal>
 )
 
+// Sparkle star dot
+const Star = ({ style }) => (
+  <div className="absolute w-1.5 h-1.5 rounded-full bg-white star" style={style} />
+)
+
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
 
-      {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center pt-20 pb-0 bg-white dark:bg-dark-bg overflow-hidden">
-        {/* Background blobs */}
-        <div className="absolute top-10 right-0 w-[480px] h-[480px] bg-brand-yellowPale dark:bg-yellow-900/20 blob-yellow opacity-60 -translate-y-10 translate-x-20 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-brand-greenPale dark:bg-green-900/20 blob-green opacity-50 translate-y-20 -translate-x-10 pointer-events-none" />
+      {/* ══════════════════════════════════════
+          HERO — Full sky with floating cloud paws
+      ══════════════════════════════════════ */}
+      <section className="hero-sky relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-2 gap-10 items-center">
-          {/* Left text */}
-          <motion.div initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{duration:0.7}}>
-            <span className="section-label mb-3 block">Dog Daycare & Boarding</span>
-            <h1 className="font-display text-6xl md:text-7xl leading-tight text-slate-800 dark:text-dark-text mb-2">
-              Enjoy Your<br />
-              <span className="text-brand-orange">Holiday</span>
-            </h1>
-            <p className="font-heading text-slate-500 dark:text-dark-muted text-lg mb-8 leading-relaxed max-w-md">
-              Your pets will always be especially plenty of human interaction, diet watch, and love. Your dog deserves the absolute best.
-            </p>
-            <div className="flex gap-4 flex-wrap">
-              <Link to="/contact" className="btn-orange text-base px-8 py-3.5">
+        {/* ── Floating cloud paws (background layer) ── */}
+        <FloatingPaws />
+
+        {/* ── Sparkle stars scattered in sky ── */}
+        {[
+          { top:'12%', left:'22%', animationDelay:'0s' },
+          { top:'28%', left:'65%', animationDelay:'0.7s' },
+          { top:'8%',  left:'75%', animationDelay:'1.3s' },
+          { top:'55%', left:'8%',  animationDelay:'0.4s' },
+          { top:'42%', left:'90%', animationDelay:'1.8s' },
+          { top:'70%', left:'35%', animationDelay:'2.2s' },
+          { top:'18%', left:'48%', animationDelay:'0.9s' },
+          { top:'80%', left:'85%', animationDelay:'1.5s' },
+        ].map((s, i) => <Star key={i} style={s} />)}
+
+        {/* ── Large decorative cloud shapes ── */}
+        <div className="absolute top-16 right-0 w-96 h-48 bg-white/10 rounded-full blur-3xl cloud-puff pointer-events-none" />
+        <div className="absolute bottom-20 left-10 w-80 h-40 bg-white/8 rounded-full blur-2xl cloud-puff-2 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-white/5 rounded-full blur-3xl cloud-puff-3 pointer-events-none" />
+
+        {/* ── Content ── */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-2 gap-10 items-center">
+
+          {/* Left — Text */}
+          <motion.div
+            initial={{ opacity:0, y:50 }}
+            animate={{ opacity:1, y:0 }}
+            transition={{ duration:0.8, ease:'easeOut' }}
+          >
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity:0, x:-20 }}
+              animate={{ opacity:1, x:0 }}
+              transition={{ delay:0.3 }}
+              className="inline-flex items-center gap-2 glass-card px-4 py-2 mb-6"
+            >
+              <span className="text-lg">🐾</span>
+              <span className="text-white/90 font-heading font-bold text-sm tracking-wide">
+                Mumbai's No.1 Dog Daycare
+              </span>
+              <span className="flex gap-0.5">
+                {[0,1,2,3,4].map(i => (
+                  <svg key={i} className="w-3 h-3 text-yellow-300 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.564-.955L10 0l2.948 5.955 6.564.955-4.756 4.635 1.122 6.545z"/>
+                  </svg>
+                ))}
+              </span>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h1
+              initial={{ opacity:0, y:30 }}
+              animate={{ opacity:1, y:0 }}
+              transition={{ delay:0.4, duration:0.7 }}
+              className="font-display text-5xl sm:text-6xl md:text-7xl leading-tight mb-4"
+            >
+              <span className="text-white drop-shadow-lg">A Home</span>
+              <br />
+              <span className="text-shimmer">Away From</span>
+              <br />
+              <span className="text-white drop-shadow-lg">Home</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity:0 }}
+              animate={{ opacity:1 }}
+              transition={{ delay:0.6 }}
+              className="text-white/80 font-heading text-lg leading-relaxed mb-8 max-w-md drop-shadow"
+            >
+              Your dog deserves pure joy — expert care, endless play, and love that feels just like family. Every single day.
+            </motion.p>
+
+            {/* CTA buttons */}
+            <motion.div
+              initial={{ opacity:0, y:20 }}
+              animate={{ opacity:1, y:0 }}
+              transition={{ delay:0.8 }}
+              className="flex gap-4 flex-wrap mb-10"
+            >
+              <Link to="/contact"
+                className="bg-white text-sky-600 font-heading font-bold px-8 py-3.5 rounded-full hover:bg-sky-50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/30 inline-flex items-center gap-2 active:scale-95">
                 Book Now
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7"/></svg>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7"/>
+                </svg>
               </Link>
-              <Link to="/services" className="btn-outline-orange text-base px-8 py-3.5">Explore Services</Link>
-            </div>
+              <Link to="/services" className="btn-white-outline">
+                Explore Services
+              </Link>
+            </motion.div>
 
             {/* Stats */}
-            <div className="flex gap-8 mt-10">
-              {[['500+','Happy Dogs'],['5 Yrs','Experience'],['4.9★','Rating']].map(([n,l]) => (
-                <div key={l} className="text-center">
-                  <div className="font-display text-2xl text-brand-orange">{n}</div>
-                  <div className="font-heading text-xs text-slate-500 dark:text-dark-muted">{l}</div>
+            <motion.div
+              initial={{ opacity:0, y:20 }}
+              animate={{ opacity:1, y:0 }}
+              transition={{ delay:1.0 }}
+              className="flex gap-4 sm:gap-6 flex-wrap"
+            >
+              {[
+                { num:'500+', label:'Happy Dogs',  icon:'🐶' },
+                { num:'5 Yrs', label:'Experience',  icon:'⭐' },
+                { num:'4.9',   label:'Star Rating',  icon:'🏆' },
+                { num:'24/7',  label:'Care & Love',  icon:'❤️' },
+              ].map(({ num, label, icon }) => (
+                <div key={label} className="glass-card stat-glow px-4 py-3 text-center min-w-[80px]">
+                  <div className="text-lg mb-0.5">{icon}</div>
+                  <div className="font-display text-xl text-white leading-none">{num}</div>
+                  <div className="font-heading text-white/70 text-xs mt-0.5">{label}</div>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* Right image with blob */}
-          <motion.div initial={{opacity:0,scale:0.9}} animate={{opacity:1,scale:1}} transition={{duration:0.8,delay:0.2}} className="relative flex justify-center">
-            <div className="relative w-full max-w-md">
-              <div className="blob-yellow w-full aspect-square bg-brand-yellow/30 dark:bg-yellow-800/20 absolute inset-0 animate-float" />
-              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=700&q=85"
-                alt="Happy dog" className="relative z-10 w-full rounded-3xl object-cover aspect-[4/5] shadow-2xl" />
-              {/* Floating badge */}
-              <motion.div animate={{y:[-5,5,-5]}} transition={{duration:3,repeat:Infinity,ease:'easeInOut'}}
-                className="absolute top-8 -left-6 bg-white dark:bg-dark-card rounded-2xl shadow-xl p-3 z-20">
-                <div className="text-2xl mb-1 text-center">🐾</div>
-                <div className="font-display text-brand-orange text-sm">Cat Boarding</div>
-                <div className="text-xs text-slate-500 font-heading">Available!</div>
+          {/* Right — Dog image with floating elements */}
+          <motion.div
+            initial={{ opacity:0, scale:0.85, y:30 }}
+            animate={{ opacity:1, scale:1, y:0 }}
+            transition={{ duration:0.9, delay:0.3, ease:'easeOut' }}
+            className="relative flex justify-center"
+          >
+            <div className="relative w-full max-w-lg">
+
+              {/* Glowing ring behind image */}
+              <div className="absolute inset-4 rounded-full bg-white/20 blur-2xl animate-pulse" />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 to-transparent blur-xl" />
+
+              {/* Main dog image */}
+              <motion.img
+                src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=700&q=85"
+                alt="Happy dog"
+                className="relative z-10 w-full rounded-[2.5rem] object-cover aspect-[4/5] shadow-2xl border-4 border-white/30"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              />
+
+              {/* Floating badge — Cat Boarding */}
+              <motion.div
+                animate={{ y: [-6, 6, -6], rotate: [-2, 2, -2] }}
+                transition={{ duration:3.5, repeat:Infinity, ease:'easeInOut' }}
+                className="absolute top-6 -left-8 glass-card px-4 py-3 z-20 shadow-xl"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🐱</span>
+                  <div>
+                    <div className="font-display text-white text-sm leading-none">Cat Boarding</div>
+                    <div className="text-white/70 text-xs font-heading">Available now!</div>
+                  </div>
+                </div>
               </motion.div>
-              <motion.div animate={{y:[5,-5,5]}} transition={{duration:4,repeat:Infinity,ease:'easeInOut'}}
-                className="absolute bottom-10 -right-4 bg-brand-orange rounded-2xl shadow-xl p-3 z-20 text-white text-center">
-                <div className="font-display text-lg">98%</div>
-                <div className="font-heading text-xs">Return Rate</div>
+
+              {/* Floating badge — Return rate */}
+              <motion.div
+                animate={{ y: [5, -8, 5], rotate: [2, -2, 2] }}
+                transition={{ duration:4, repeat:Infinity, ease:'easeInOut', delay:1 }}
+                className="absolute bottom-12 -right-6 bg-white rounded-2xl shadow-2xl px-4 py-3 z-20"
+              >
+                <div className="font-display text-2xl text-sky-500 leading-none">98%</div>
+                <div className="font-heading text-slate-600 text-xs font-bold">Return Rate</div>
               </motion.div>
+
+              {/* Floating badge — Live updates */}
+              <motion.div
+                animate={{ y: [-4, 8, -4] }}
+                transition={{ duration:5, repeat:Infinity, ease:'easeInOut', delay:2 }}
+                className="absolute top-1/2 -right-8 glass-card px-3 py-2 z-20 shadow-xl"
+              >
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-white font-heading text-xs font-bold">Live Updates</span>
+                </div>
+              </motion.div>
+
+              {/* Corner paw watermark */}
+              <div className="absolute bottom-4 left-4 z-20 opacity-60">
+                <img src="/paw-cloud.png" alt="" className="w-12 h-12 object-contain" />
+              </div>
             </div>
           </motion.div>
         </div>
+
+        {/* ── Scroll indicator ── */}
+        <motion.div
+          initial={{ opacity:0 }}
+          animate={{ opacity:1 }}
+          transition={{ delay:1.5 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+        >
+          <span className="text-white/60 font-heading text-xs tracking-widest uppercase">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration:1.5, repeat:Infinity }}
+            className="w-5 h-8 rounded-full border-2 border-white/40 flex items-start justify-center pt-1.5"
+          >
+            <div className="w-1 h-2 rounded-full bg-white/60" />
+          </motion.div>
+        </motion.div>
+
+        {/* ── Bottom wave ── */}
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-16 sm:h-20">
+            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" className="fill-white dark:fill-dark-bg"/>
+          </svg>
+        </div>
       </section>
 
-      {/* ── KEEP THEM HAPPY ── */}
+      {/* ══════════════════════════════════════
+          KEEP THEM HAPPY
+      ══════════════════════════════════════ */}
       <section className="py-20 bg-white dark:bg-dark-bg relative overflow-hidden">
         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-yellowPale dark:bg-yellow-900/10 blob-yellow opacity-60 pointer-events-none -translate-x-32" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
@@ -94,14 +253,16 @@ export default function Home() {
               We can keep<br /><span className="text-brand-orange">them happy</span>
             </h2>
             <p className="text-slate-500 dark:text-dark-muted font-heading leading-relaxed mb-6">
-              From the time they arrive until they say their farewells, our tails wag with limitless affections and point to their matter — giving your dog a truly joyful experience every single day.
+              From the time they arrive until they say their farewells, our tails wag with limitless affections — giving your dog a truly joyful experience every single day.
             </p>
             <Link to="/about" className="btn-orange">Know More</Link>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* ── SERVICES CIRCLES ── */}
+      {/* ══════════════════════════════════════
+          SERVICES CIRCLES
+      ══════════════════════════════════════ */}
       <section className="py-20 bg-slate-50 dark:bg-dark-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
@@ -116,12 +277,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ACTIVITIES ── */}
+      {/* ══════════════════════════════════════
+          ACTIVITIES
+      ══════════════════════════════════════ */}
       <section className="py-20 bg-white dark:bg-dark-bg relative overflow-hidden">
         <div className="absolute right-0 top-0 w-80 h-80 bg-brand-skyPale dark:bg-sky-900/10 blob-sky opacity-50 translate-x-20 -translate-y-10 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal direction="right">
-            <span className="section-label block mb-2">Fun & Fitness</span>
+            <span className="section-label block mb-2">Fun &amp; Fitness</span>
             <h2 className="font-display text-5xl text-slate-800 dark:text-dark-text leading-tight mb-4">
               Activities and<br /><span className="text-brand-orange">Exercise</span>
             </h2>
@@ -148,7 +311,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SERVICE CARDS ── */}
+      {/* ══════════════════════════════════════
+          SERVICE CARDS
+      ══════════════════════════════════════ */}
       <section className="py-20 bg-slate-50 dark:bg-dark-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal><div className="text-center mb-12">
@@ -162,7 +327,7 @@ export default function Home() {
                   <div className={`service-circle ${s.color} w-14 h-14 mx-0 mb-4`}><span className="text-2xl">{s.icon}</span></div>
                   <h3 className="font-heading font-800 text-slate-800 dark:text-dark-text mb-2">{s.title}</h3>
                   <p className="text-slate-500 dark:text-dark-muted text-sm leading-relaxed mb-4">{s.desc}</p>
-                  <Link to="/services" className={`font-heading font-700 text-sm ${s.accent} hover:underline underline-offset-2`}>View More →</Link>
+                  <Link to="/services" className="font-heading font-700 text-sm text-brand-orange hover:underline underline-offset-2">View More →</Link>
                 </div>
               </ScrollReveal>
             ))}
@@ -170,7 +335,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIAL ── */}
+      {/* ══════════════════════════════════════
+          TESTIMONIAL
+      ══════════════════════════════════════ */}
       <section className="py-20 bg-white dark:bg-dark-bg relative overflow-hidden">
         <div className="absolute left-0 bottom-0 w-96 h-96 bg-brand-greenPale dark:bg-green-900/10 blob-green opacity-40 -translate-x-20 translate-y-20 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
@@ -189,7 +356,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80" alt="Jane" className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-orange" />
               <div>
-                <div className="font-heading font-800 text-slate-800 dark:text-dark-text">Sam Gore</div>
+                <div className="font-heading font-800 text-slate-800 dark:text-dark-text">Jane Cola</div>
                 <div className="text-xs text-slate-500 dark:text-dark-muted">Owner, Labrador</div>
               </div>
             </div>
@@ -197,7 +364,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PRICING ── */}
+      {/* ══════════════════════════════════════
+          PRICING
+      ══════════════════════════════════════ */}
       <section className="py-20 bg-slate-50 dark:bg-dark-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal><div className="text-center mb-14">
@@ -210,20 +379,23 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {pricing.map((p, i) => (
               <ScrollReveal key={p.plan} delay={i*0.1}>
-                <div className={`card-white p-7 text-center relative overflow-hidden ${p.popular ? 'bg-brand-orange dark:bg-brand-orange ring-4 ring-brand-orange/30' : ''}`}>
-                  {p.popular && <div className="absolute top-3 right-3 bg-white/20 text-white text-xs font-bold px-2 py-0.5 rounded-full">Popular</div>}
+                <div className={`card-white p-7 text-center relative overflow-hidden ${p.popular ? 'ring-4 ring-brand-orange/60 bg-brand-orange dark:bg-brand-orange' : ''}`}>
+                  {p.popular && <div className="absolute top-3 right-3 bg-white/30 text-slate-900 text-xs font-bold px-2 py-0.5 rounded-full">Popular</div>}
                   {p.badge && <div className="absolute top-3 right-3 bg-brand-orangePale text-brand-orange text-xs font-bold px-2 py-0.5 rounded-full">{p.badge}</div>}
-                  <div className={`font-heading text-sm mb-3 ${p.popular?'text-white/80':'text-slate-500'}`}>Pet Care</div>
-                  <div className={`font-display text-4xl mb-1 ${p.popular?'text-white':'text-brand-orange'}`}>{p.plan}</div>
-                  {p.save && <div className="text-xs text-green-300 font-bold mb-3">{p.save}</div>}
+                  <div className={`font-heading text-sm mb-3 ${p.popular ? 'text-slate-800' : 'text-slate-500'}`}>Pet Care</div>
+                  <div className={`font-display text-4xl mb-1 ${p.popular ? 'text-slate-900' : 'text-brand-orange'}`}>{p.plan}</div>
+                  {p.save && <div className="text-xs text-emerald-700 font-bold mb-3">{p.save}</div>}
                   <div className="mt-4 space-y-2 text-sm">
                     {[['Daycare',p.daycare],['Boarding',p.boarding],['Grooming',p.grooming],['Pickup',p.pickup]].map(([l,v]) => (
-                      <div key={l} className={`flex justify-between ${p.popular?'text-white':'text-slate-600 dark:text-dark-muted'}`}>
+                      <div key={l} className={`flex justify-between ${p.popular ? 'text-slate-800' : 'text-slate-600 dark:text-dark-muted'}`}>
                         <span>{l}</span><span className="font-bold">{v}</span>
                       </div>
                     ))}
                   </div>
-                  <Link to="/contact" className={`mt-6 block font-heading font-bold text-sm py-2.5 rounded-full transition-all ${p.popular?'bg-white text-brand-orange hover:bg-orange-50':'btn-orange w-full text-center'}`}>
+                  <Link to="/contact"
+                    className={`mt-6 block font-heading font-bold text-sm py-2.5 rounded-full transition-all hover:scale-105 ${
+                      p.popular ? 'bg-slate-900 text-white hover:bg-slate-800' : 'bg-brand-orange text-slate-900 hover:bg-brand-orangeLight'
+                    }`}>
                     {p.popular ? 'Get Started' : 'Book Now'}
                   </Link>
                 </div>
@@ -233,7 +405,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CHECK-IN TIME ── */}
+      {/* ══════════════════════════════════════
+          CHECK-IN TIME
+      ══════════════════════════════════════ */}
       <section className="py-20 bg-white dark:bg-dark-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal direction="right">
@@ -242,7 +416,7 @@ export default function Home() {
             <div className="space-y-5">
               {[
                 { icon:'🕐', title:'From 8 AM to 12 PM', desc:'Arrange and drop off and count down a certain time after getting into office and everything is fine.' },
-                { icon:'🐾', title:'Favourite Toys', desc:'If your dog has separation anxiety we encourage you to bring something that smells to them from home.' },
+                { icon:'🐾', title:'Favourite Toys', desc:"If your dog has separation anxiety we encourage you to bring something that smells to them from home." },
               ].map(({ icon, title, desc }) => (
                 <div key={title} className="flex gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-brand-orangePale flex items-center justify-center text-xl flex-shrink-0">{icon}</div>
@@ -268,7 +442,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── QUOTE CALCULATOR ── */}
+      {/* ══════════════════════════════════════
+          QUOTE CALCULATOR
+      ══════════════════════════════════════ */}
       <section className="py-20 bg-slate-50 dark:bg-dark-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal direction="right">
@@ -284,7 +460,7 @@ export default function Home() {
               <h3 className="font-display text-3xl text-brand-orange mb-6">pet boarding</h3>
               <div className="space-y-4">
                 {['Name','Phone','Select a start'].map(ph => (
-                  <input key={ph} placeholder={ph} className="w-full px-4 py-3 rounded-2xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-bg text-sm outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange text-slate-700 dark:text-dark-text placeholder:text-slate-400" />
+                  <input key={ph} placeholder={ph} className="w-full px-4 py-3 rounded-2xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-bg text-sm outline-none focus:ring-2 focus:ring-brand-orange/40 focus:border-brand-orange text-slate-700 dark:text-dark-text placeholder:text-slate-400" />
                 ))}
                 <div className="py-3 border-b border-slate-200 dark:border-dark-border flex justify-between items-center">
                   <span className="font-heading font-700 text-slate-700 dark:text-dark-text">Number of days:</span>
@@ -301,26 +477,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA BANNER ── */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1400&q=80" alt="dogs" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-brand-orange/80 dark:bg-brand-orange/90" />
-        </div>
+      {/* ══════════════════════════════════════
+          CTA BANNER — sky themed
+      ══════════════════════════════════════ */}
+      <section className="hero-sky relative py-24 overflow-hidden">
+        <FloatingPaws />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-sky-800/30" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <ScrollReveal>
-            <h2 className="font-display text-5xl text-white mb-4">Happy to welcome you<br/>to our circle of friends</h2>
-            <p className="text-white/80 font-heading mb-8">Join hundreds of happy pet parents who trust Sky's Pawcation.</p>
+            <img src="/paw-cloud.png" alt="" className="w-20 h-20 object-contain mx-auto mb-4 opacity-80" />
+            <h2 className="font-display text-5xl text-white drop-shadow-lg mb-4">
+              Happy to welcome you<br/>to our circle of friends
+            </h2>
+            <p className="text-white/80 font-heading mb-8">
+              Join hundreds of happy pet parents who trust Sky's Pawcation.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="bg-white text-brand-orange font-heading font-bold px-8 py-3.5 rounded-full hover:bg-orange-50 hover:scale-105 transition-all">
+              <Link to="/contact" className="bg-white text-sky-600 font-heading font-bold px-8 py-3.5 rounded-full hover:bg-sky-50 hover:scale-105 transition-all shadow-xl">
                 Book a Tour
               </Link>
               <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
-                className="border-2 border-white text-white font-heading font-bold px-8 py-3.5 rounded-full hover:bg-white hover:text-brand-orange hover:scale-105 transition-all">
+                className="btn-white-outline">
                 WhatsApp Us
               </a>
             </div>
           </ScrollReveal>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-12">
+            <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z" className="fill-white dark:fill-dark-bg"/>
+          </svg>
         </div>
       </section>
     </main>

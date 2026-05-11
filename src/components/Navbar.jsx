@@ -135,7 +135,7 @@ export default function Navbar({ isDark, setIsDark }) {
 
           {/* Phone CTA */}
           <a href="tel:+919373222026"
-            className="flex items-center gap-2 bg-brand-orange text-white font-heading font-bold text-sm px-5 py-2.5 rounded-full hover:bg-brand-orangeLight transition-all hover:shadow-lg hover:shadow-brand-orange/30 whitespace-nowrap">
+            className="flex items-center gap-2 bg-brand-orange text-slate-900 font-heading font-bold text-sm px-5 py-2.5 rounded-full hover:bg-brand-orangeLight transition-all hover:shadow-lg hover:shadow-brand-orange/30 whitespace-nowrap">
             <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
             </svg>
@@ -178,14 +178,14 @@ export default function Navbar({ isDark, setIsDark }) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden bg-white/98 dark:bg-dark-bg/98 backdrop-blur-md border-t border-orange-100 dark:border-dark-border overflow-hidden"
+            className="lg:hidden bg-white/98 dark:bg-dark-bg/98 backdrop-blur-md border-t border-brand-orangePale dark:border-dark-border overflow-hidden"
           >
             <div className="px-5 py-4 grid grid-cols-2 gap-2">
               {links.map(({ to, label }) => (
                 <NavLink key={to} to={to}
                   className={({ isActive }) =>
                     `px-4 py-2.5 rounded-xl text-sm font-heading font-semibold text-center transition-all ${
-                      isActive ? 'bg-brand-orange text-white' : 'bg-brand-orangePale text-brand-orange'
+                      isActive ? 'bg-brand-orange text-slate-900' : 'bg-brand-orangePale text-brand-orange'
                     }`
                   }
                 >{label}</NavLink>

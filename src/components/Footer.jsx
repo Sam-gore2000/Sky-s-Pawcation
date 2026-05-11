@@ -16,14 +16,14 @@ export default function Footer() {
               </div>
             </Link>
             <address className="not-italic text-sm space-y-1.5 text-slate-400">
-              <p className="flex gap-2"><span className="text-brand-orange">📍</span> Sky's Pawcation, Kalayni Nagar, Maharashtra</p>
+              <p className="flex gap-2"><span className="text-brand-orange">📍</span> PO BOX Collins Street West</p>
               <p className="flex gap-2"><span className="text-brand-orange">📞</span> <a href="tel:+919876543210" className="hover:text-brand-orange">+91 98765 43210</a></p>
               <p className="flex gap-2"><span className="text-brand-orange">🕐</span> Mon–Sun: 8AM – 8PM</p>
             </address>
             <div className="flex gap-2 mt-5">
               {['Twitter','Instagram','Facebook'].map(s => (
                 <span key={s} title={s}
-                  className="w-8 h-8 rounded-full bg-slate-800 hover:bg-brand-orange flex items-center justify-center text-xs text-slate-400 hover:text-white cursor-pointer transition-all duration-200 hover:scale-110">
+                  className="w-8 h-8 rounded-full bg-slate-800 hover:bg-brand-orange flex items-center justify-center text-xs text-slate-400 hover:text-slate-900 cursor-pointer transition-all duration-200 hover:scale-110">
                   {s[0]}
                 </span>
               ))}
@@ -56,7 +56,7 @@ export default function Footer() {
             <p className="text-sm text-slate-500 mb-4">Stay updated with tips, news and special offers.</p>
             <div className="flex gap-2">
               <input type="email" placeholder="Your email" className="flex-1 bg-slate-800 rounded-full px-4 py-2 text-sm text-white placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-brand-orange" />
-              <button className="bg-brand-orange text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-brand-orangeLight transition-colors whitespace-nowrap">Subscribe</button>
+              <button className="bg-brand-orange text-slate-900 px-4 py-2 rounded-full text-sm font-bold hover:bg-brand-orangeLight transition-colors whitespace-nowrap">Subscribe</button>
             </div>
             <p className="text-xs text-slate-600 mt-3">Never miss new launches!</p>
           </div>
