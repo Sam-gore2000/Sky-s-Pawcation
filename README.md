@@ -1,4 +1,4 @@
-# Sky's Pawcation v2.0 — Complete Website
+# Sky's Pawcation 
 
 A premium dog daycare website with vibrant orange/green palette, organic blob shapes, and full dark mode.
 
