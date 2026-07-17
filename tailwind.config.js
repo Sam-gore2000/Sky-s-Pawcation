@@ -10,7 +10,7 @@ export default {
           orangeLight: '#66e2fd',
           orangePale:  '#e6f9fe',
           green:       '#4CAF50',
-          greenLight:  '#81C784',add
+          greenLight:  '#81C784',
           greenPale:   '#F0F9F0',
           yellow:      '#FFD600',
           yellowPale:  '#FFFDE7',

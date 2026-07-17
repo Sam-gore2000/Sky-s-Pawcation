@@ -16,8 +16,8 @@ export default function Footer() {
               </div>
             </Link>
             <address className="not-italic text-sm space-y-1.5 text-slate-400">
-              <p className="flex gap-2"><span className="text-brand-orange">📍</span> PO BOX Collins Street West</p>
-              <p className="flex gap-2"><span className="text-brand-orange">📞</span> <a href="tel:+919876543210" className="hover:text-brand-orange">+91 98765 43210</a></p>
+              <p className="flex gap-2"><span className="text-brand-orange">📍</span> Sonai park lane 2</p>
+              <p className="flex gap-2"><span className="text-brand-orange">📞</span> <a href="tel:+7768969620" className="hover:text-brand-orange">+91 98765 43210</a></p>
               <p className="flex gap-2"><span className="text-brand-orange">🕐</span> Mon–Sun: 8AM – 8PM</p>
             </address>
             <div className="flex gap-2 mt-5">
@@ -63,8 +63,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <p className="text-xs text-slate-600">© 2024 Sky's Pawcation. All rights reserved.</p>
-          <p className="text-xs text-slate-700">Made with love in Mumbai</p>
+          <p className="text-xs text-slate-600">© 2026 Sky's Pawcation. All rights reserved.</p>
+          <p className="text-xs text-slate-700">Made with samcoding</p>
         </div>
       </div>
     </footer>

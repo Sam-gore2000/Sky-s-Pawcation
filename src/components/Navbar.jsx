@@ -29,11 +29,10 @@ function ThemeToggle({ isDark, setIsDark, size = 'md' }) {
     <motion.button
       onClick={() => setIsDark(!isDark)}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      className={`relative flex items-center rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-orange/40 ${
-        isDark
+      className={`relative flex items-center rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-orange/40 ${isDark
           ? 'bg-slate-800 border-slate-600 hover:border-brand-orange'
           : 'bg-cyan-50 border-cyan-200 hover:border-brand-orange'
-      } ${isSmall ? 'w-14 h-7 px-1' : 'w-16 h-8 px-1'}`}
+        } ${isSmall ? 'w-14 h-7 px-1' : 'w-16 h-8 px-1'}`}
       whileTap={{ scale: 0.95 }}
     >
       {/* Track icons */}
@@ -46,9 +45,8 @@ function ThemeToggle({ isDark, setIsDark, size = 'md' }) {
 
       {/* Sliding knob with icon inside */}
       <motion.div
-        className={`absolute rounded-full shadow-md flex items-center justify-center transition-colors duration-300 ${
-          isDark ? 'bg-slate-700' : 'bg-white'
-        } ${isSmall ? 'w-5 h-5' : 'w-6 h-6'}`}
+        className={`absolute rounded-full shadow-md flex items-center justify-center transition-colors duration-300 ${isDark ? 'bg-slate-700' : 'bg-white'
+          } ${isSmall ? 'w-5 h-5' : 'w-6 h-6'}`}
         animate={{ left: isDark ? (isSmall ? '28px' : '32px') : '3px' }}
         transition={{ type: 'spring', stiffness: 500, damping: 30 }}
       >
@@ -89,19 +87,18 @@ export default function Navbar({ isDark, setIsDark }) {
   useEffect(() => setOpen(false), [location])
 
   const links = [
-    { to: '/',         label: 'Home' },
-    { to: '/about',    label: 'About' },
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About' },
     { to: '/services', label: 'Services' },
-    { to: '/process',  label: 'Process' },
-    { to: '/gallery',  label: 'Gallery' },
-    { to: '/blog',     label: 'Blog' },
-    { to: '/contact',  label: 'Contact' },
+    { to: '/process', label: 'Process' },
+    { to: '/gallery', label: 'Gallery' },
+    { to: '/blog', label: 'Blog' },
+    { to: '/contact', label: 'Contact' },
   ]
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/95 dark:bg-dark-bg/95 backdrop-blur-md shadow-lg shadow-black/5' : 'bg-transparent'
-    }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-dark-bg/95 backdrop-blur-md shadow-lg shadow-black/5' : 'bg-transparent'
+      }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3">
 
         {/* ── Logo ── */}
@@ -118,10 +115,9 @@ export default function Navbar({ isDark, setIsDark }) {
           {links.map(({ to, label }) => (
             <NavLink key={to} to={to}
               className={({ isActive }) =>
-                `px-3 py-2 rounded-xl text-sm font-heading font-semibold transition-all duration-200 ${
-                  isActive
-                    ? 'bg-brand-orangePale text-brand-orange'
-                    : 'text-slate-600 dark:text-dark-muted hover:text-brand-orange hover:bg-brand-orangePale/50'
+                `px-3 py-2 rounded-xl text-sm font-heading font-semibold transition-all duration-200 ${isActive
+                  ? 'bg-brand-orangePale text-brand-orange'
+                  : 'text-slate-600 dark:text-dark-muted hover:text-brand-orange hover:bg-brand-orangePale/50'
                 }`
               }
             >{label}</NavLink>
@@ -134,12 +130,12 @@ export default function Navbar({ isDark, setIsDark }) {
           <ThemeToggle isDark={isDark} setIsDark={setIsDark} size="md" />
 
           {/* Phone CTA */}
-          <a href="tel:+919373222026"
+          <a href="tel:+917768969620"
             className="flex items-center gap-2 bg-brand-orange text-slate-900 font-heading font-bold text-sm px-5 py-2.5 rounded-full hover:bg-brand-orangeLight transition-all hover:shadow-lg hover:shadow-brand-orange/30 whitespace-nowrap">
             <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+              <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
             </svg>
-            +91 9373222026
+            +91 7768969620
           </a>
         </div>
 
@@ -160,8 +156,8 @@ export default function Navbar({ isDark, setIsDark }) {
                   className="block w-6 h-0.5 bg-slate-700 dark:bg-dark-text rounded-full"
                   animate={
                     i === 0 && open ? { rotate: 45, y: 8 } :
-                    i === 1 && open ? { opacity: 0 } :
-                    i === 2 && open ? { rotate: -45, y: -8 } : {}
+                      i === 1 && open ? { opacity: 0 } :
+                        i === 2 && open ? { rotate: -45, y: -8 } : {}
                   }
                 />
               ))}
@@ -184,8 +180,7 @@ export default function Navbar({ isDark, setIsDark }) {
               {links.map(({ to, label }) => (
                 <NavLink key={to} to={to}
                   className={({ isActive }) =>
-                    `px-4 py-2.5 rounded-xl text-sm font-heading font-semibold text-center transition-all ${
-                      isActive ? 'bg-brand-orange text-slate-900' : 'bg-brand-orangePale text-brand-orange'
+                    `px-4 py-2.5 rounded-xl text-sm font-heading font-semibold text-center transition-all ${isActive ? 'bg-brand-orange text-slate-900' : 'bg-brand-orangePale text-brand-orange'
                     }`
                   }
                 >{label}</NavLink>
@@ -195,7 +190,7 @@ export default function Navbar({ isDark, setIsDark }) {
               <a href="tel:+919373222026"
                 className="btn-orange flex-1 justify-center text-sm">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+                  <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
                 </svg>
                 Call Us Now
               </a>
